@@ -7,7 +7,7 @@ document.getElementById("myform").addEventListener("submit", function (event) {
   var date = document.getElementById("date").value;
   var time = document.getElementById("time").value;
 
-  console.log("Name:", name);
+  console.log("Name:", name1);
   console.log("Email:", email);
   console.log("Phone:", phone);
   console.log("Date:", date);
