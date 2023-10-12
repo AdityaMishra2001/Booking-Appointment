@@ -39,7 +39,7 @@
           <input
             type="text"
             id="name"
-            name="name"
+            name="Name"
             placeholder="Type your Name"
             class="form-control"
           />
@@ -48,16 +48,16 @@
           <input
             type="email"
             id="email"
-            name="email"
+            name="Email"
             placeholder="Type your Email address"
             class="form-control"
           />
 
-          <label for="phone"><strong>Phone:</strong></label>
+          <label for="phone" class="nam"><strong>Phone:</strong></label>
           <input
             type="tel"
             id="phone"
-            name="phone"
+            name="Phone"
             placeholder="Type your contact number"
             maxlength="10"
             class="form-control"
@@ -66,10 +66,9 @@
           />
 
           <div class="time-text">
-            <label for="datetime"><strong>Time for Call:</strong></label
-            ><br />
-            <input type="date" id="date" name="date" />
-            <input type="time" id="time" name="time" value="11:00" />
+            <label for="datetime"><strong>Time for Call:</strong> </label><br />
+            <input type="date" id="date" name="Date" />
+            <input type="time" id="time" name="Time" value="11:00" />
           </div>
         </div>
 
@@ -77,6 +76,13 @@
           <input type="submit" value="GET A CALL" class="btn btn-primary" />
         </div>
       </form>
+    </div>
+
+    <br /><br />
+
+    <div class="box">
+      <br /><br />
+      <p class="output" id="div"></p>
     </div>
 
     <script src="from.js"></script>
