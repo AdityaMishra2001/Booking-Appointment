@@ -30,6 +30,8 @@ function addInput(e) {
     localStorage.setItem(name.value, JSON.stringify(details));
 
     //display on screen
+
+    //creating
     let div = document.createElement("div");
 
     div.appendChild(document.createTextNode(name.value));
@@ -37,6 +39,7 @@ function addInput(e) {
     div.appendChild(document.createTextNode(phone.value + "🔶"));
     div.appendChild(document.createTextNode(date.value + " "));
 
+    //styline the text
     div.style.fontWeight = "bold";
     div.style.textAlign = "center";
     div.style.color = "brown";
