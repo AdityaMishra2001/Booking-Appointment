@@ -14,21 +14,20 @@
   padding: 10px;
   float: right;
   margin-right: 10px;
-
 }
 
-.container{
-    text-align: left; /* Center align the content */
-    background-color: white;
-    background-size: cover;
-    color: rgb(16, 14, 14);
-    margin: auto;
-    border-radius: 25px;
-    border: 2px solid orange;
-    padding: 5px;
-    width: 600px;
-    height: 440px;
-  }
+.container {
+  text-align: left; /* Center align the content */
+  background-color: white;
+  background-size: cover;
+  color: rgb(16, 14, 14);
+  margin: auto;
+  border-radius: 25px;
+  border: 2px solid orange;
+  padding: 5px;
+  width: 600px;
+  height: 440px;
+}
 
 .all-text input {
   width: 100%; /* Full width within parent container */
@@ -47,11 +46,10 @@
   border: none; /* Remove the border */
 }
 
-
 body {
   background: url("bg/bg4.webp");
   background-size: cover;
-  padding: 10px
+  padding: 10px;
 }
 
 h3 {
