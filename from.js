@@ -1,15 +1,15 @@
+//getting user data input
+let userName = document.getElementById("name");
+let email = document.getElementById("email");
+let phone = document.getElementById("phone");
+let date = document.getElementById("date");
+let time = document.getElementById("time");
+
 function addInput(e) {
   e.preventDefault();
 
-  //getting user data input
-  let name = document.getElementById("name");
-  let email = document.getElementById("email");
-  let phone = document.getElementById("phone");
-  let date = document.getElementById("date");
-  let time = document.getElementById("time");
-
   if (
-    name.value === "" ||
+    userName.value === "" ||
     email.value === "" ||
     phone.value === "" ||
     date.value === "" ||
@@ -19,7 +19,7 @@ function addInput(e) {
   } else {
     alert("Details saved to local storage");
     const details = {
-      Name: name.value,
+      Name: userName.value,
       Email: email.value,
       Phone: phone.value,
       Date: date.value,
@@ -27,7 +27,7 @@ function addInput(e) {
     };
 
     //saving to local storage
-    localStorage.setItem(name.value, JSON.stringify(details));
+    localStorage.setItem(userName.value, JSON.stringify(details));
 
     ///display on screen
 
@@ -35,7 +35,7 @@ function addInput(e) {
     let div = document.createElement("div");
 
     //creating text
-    div.appendChild(document.createTextNode(name.value));
+    div.appendChild(document.createTextNode(userName.value));
     div.appendChild(document.createTextNode("🔶" + email.value + "🔶"));
     div.appendChild(document.createTextNode(phone.value + "🔶"));
     div.appendChild(document.createTextNode(date.value + " "));
@@ -45,6 +45,7 @@ function addInput(e) {
     div.style.textAlign = "center";
     div.style.color = "brown";
 
+    //creating an delete button
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
     deleteButton.addEventListener("click", onDelete);
@@ -53,6 +54,16 @@ function addInput(e) {
     deleteButton.style.color = "red";
     deleteButton.style.borderColor = "red";
     div.appendChild(deleteButton);
+
+    //creating an edit button
+    let editButton = document.createElement("button");
+    editButton.innerText = "Edit";
+    editButton.addEventListener("click", onEdit);
+
+    //style delete button
+    editButton.style.color = "green";
+    editButton.style.borderColor = "green";
+    div.appendChild(editButton);
 
     form.after(div);
   }
@@ -65,6 +76,21 @@ function onDelete() {
   const name = div.childNodes[0].nodeValue.trim();
   // console.log(name)
   localStorage.removeItem(name);
+  div.remove();
+}
+
+//Edit Button Functionality
+
+function onEdit() {
+  const div = this.parentNode;
+  const divName = this.parentNode.childNodes[0].nodeValue.trim();
+  const details = JSON.parse(localStorage.getItem(divName));
+  userName.value = details.Name;
+  email.value = details.Email;
+  phone.value = details.Phone;
+  date.value = details.Date;
+  time.value = details.Time;
+  localStorage.removeItem(divName);
   div.remove();
 }
 
